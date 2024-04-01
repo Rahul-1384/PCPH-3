@@ -58,8 +58,57 @@ public class LinkedList_3 {
     }
 
     // removeFirst
-    public void removeFirst(){
+    public int removeFirst(){
+        if(size==0){
+            System.out.println("LL is empty");
+        }
+        if(size==1){
+            int val=head.data;
+            head=null;
+            tail=null;
+            size=0;
+            return val;
+        }
+        int val=head.data;
         head=head.next;
+        size--;
+        return val;
+    }
+
+    // removeLast
+    public int removeLast(){
+        if(size==0){
+            System.out.println("LL is empty");
+        }
+        if(size==1){
+            int val=head.data;
+            head=null;
+            tail=null;
+            size=0;
+            return val;
+        }
+        Node prev=head;
+        for(int i=0;i<size-2;i++){
+            prev=prev.next;
+        }
+        int val=prev.next.data;
+        prev.next=null;
+        tail=prev;
+        return val;
+    }
+
+    // iterative search
+    public int iterativeSearch(int key){
+        int i=0;
+        Node temp=head;
+        while(temp!=null){
+            if(temp.data==key){
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+        return -1;
     }
     public void display(){
         Node temp=head;
@@ -80,7 +129,9 @@ public class LinkedList_3 {
         ll.addLast(4);
         ll.addLast(5);
         ll.addLast(6);
-        ll.removeFirst();
+        System.out.println(ll.iterativeSearch(4));
+        // ll.removeFirst();
+        // ll.removeLast();
         // ll.addMiddle(2, 100);
         ll.display();
         // System.out.println(ll.size);
