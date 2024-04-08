@@ -239,6 +239,17 @@ public class LinkedList_3 {
             }
         }
     }
+
+    // midNode
+    public Node midnode(){
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
     public void display(){
         Node temp=head;
         System.out.print("head--->");
@@ -252,31 +263,32 @@ public class LinkedList_3 {
 
     public static void main(String[] args) {
         LinkedList_3 ll=new LinkedList_3();
-        // ll.addFirst(3);
-        // ll.addFirst(2);
-        // ll.addFirst(1);
-        // ll.addFirst(0);
-        // ll.addLast(4);
-        // ll.addLast(5);
-        // ll.addLast(6);
-        // // ll.reverseLL();
-        // // System.out.println(ll.iterativeSearch(4));
-        // // System.out.println(ll.recursiveSearch(3));
-        // // ll.removeFirst();
-        // // ll.removeLast();
-        // // ll.addMiddle(2, 100);
-        // // ll.deleteNthNodeLast(3);
-        // ll.display();
-        // System.out.println(ll.size);
+        ll.addFirst(3);
+        ll.addFirst(2);
+        ll.addFirst(1);
+        ll.addFirst(0);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.addLast(6);
+        System.out.println("the mid node is: "+ll.midnode());
+        // ll.reverseLL();
+        // System.out.println(ll.iterativeSearch(4));
+        // System.out.println(ll.recursiveSearch(3));
+        // ll.removeFirst();
+        // ll.removeLast();
+        // ll.addMiddle(2, 100);
+        // ll.deleteNthNodeLast(3);
+        ll.display();
+        System.out.println(ll.size);
         // // System.out.println(ll.pallindrome());
-        head=new Node(1);
-        Node temp=new Node(2);
-        head.next=temp;
-        head.next.next=new Node(3);
-        head.next.next.next=temp;
-        System.out.println(ll.detectCycle());
-        ll.removeCycle();
-        System.out.println(ll.detectCycle());
+        // head=new Node(1);
+        // Node temp=new Node(2);
+        // head.next=temp;
+        // head.next.next=new Node(3);
+        // head.next.next.next=temp;
+        // System.out.println(ll.detectCycle());
+        // ll.removeCycle();
+        // System.out.println(ll.detectCycle());
         
         
     }
