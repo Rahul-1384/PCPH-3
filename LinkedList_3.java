@@ -168,7 +168,7 @@ public class LinkedList_3 {
     public Node middleNode(Node head){
         Node slow=head;
         Node fast=head;
-        while(fast!=null && fast.next!=null){
+        while(fast!=null && fast.next!=null){k
             slow=slow.next;
             fast=fast.next.next;
         }
